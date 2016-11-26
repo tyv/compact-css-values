@@ -1,10 +1,6 @@
 import {camelCaseKeys, joinDimensionPairs} from './utils'
 import {mapValues, some, uniq} from 'lodash'
 
-function toString(values) {
-    return (values.length === 2 ? uniq(values) : values).join(' ')
-}
-
 export default function borderRadius(conf) {
     const props = mapValues(
         camelCaseKeys(conf),
