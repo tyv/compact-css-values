@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 import borderRadius from '../src/border-radius'
 
-describe('comapact', () => {
+describe('compact', () => {
   describe('border-radius length', () => {
     it('should compact same values as one', () => {
       borderRadius({
