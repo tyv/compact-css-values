@@ -13,3 +13,7 @@ export function joinDimensionPairs(values) {
 
   return [a, b, c, d].filter(value => value !== '').join(' ')
 }
+
+export function clearWhiteSpaces(str) {
+  return str.replace(/ {2,}/g, ' ').trim()
+}
