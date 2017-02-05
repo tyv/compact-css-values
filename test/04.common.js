@@ -2,7 +2,7 @@
 import common from '../src/common'
 
 describe('compact', () => {
-  describe('common compact', () => {
+  describe('common rule', () => {
     it('should compact list of props with given name', () => {
       common('name', {
         propName1: 'value1',
