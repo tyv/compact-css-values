@@ -7,7 +7,8 @@
         "no-unexpected-multiline": 2,
         "semi": [2, "never"],
         "object-curly-spacing": 0,
-        "babel/object-curly-spacing": [2, "never"]
+        "babel/object-curly-spacing": [2, "never"],
+        "no-param-reassign":"off"
     },
     "plugins": ["babel"],
     "parser": "babel-eslint"
