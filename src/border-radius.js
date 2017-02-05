@@ -7,10 +7,10 @@ export default function borderRadius(conf) {
       fullValue => fullValue.split('/').map(value => value.trim())
   )
   const {
-      borderTopLeftRadius = [0],
-      borderTopRightRadius = [0],
-      borderBottomRightRadius = [0],
-      borderBottomLeftRadius = [0]
+      borderTopLeftRadius = ['0'],
+      borderTopRightRadius = ['0'],
+      borderBottomRightRadius = ['0'],
+      borderBottomLeftRadius = ['0']
   } = props
 
   const hasPercentage = some(props, value => value[1])

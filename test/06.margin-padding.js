@@ -1,39 +1,8 @@
 /* eslint-env mocha */
-import {fourPairedValues, margin, padding} from '../src/margin-padding'
+import {margin, padding} from '../src/margin-padding'
 
 describe('compact', () => {
   describe('margin and padding', () => {
-    it('should compact same value to one', () => {
-      fourPairedValues({
-        'margin-left': '0',
-        'margin-top': '0',
-        'margin-right': '0',
-        'margin-bottom': '0'
-      }).should.eql('0')
-    })
-    it('should use default value if omitted', () => {
-      fourPairedValues({
-        'padding-right': '15px',
-        'padding-bottom': '20px',
-        'padding-left': '10px'
-      }).should.eql('0 15px 20px 10px')
-    })
-    it('should join equal pairs', () => {
-      fourPairedValues({
-        'padding-top': '15px',
-        'padding-right': '10px',
-        'padding-bottom': '15px',
-        'padding-left': '10px'
-      }).should.eql('15px 10px')
-    })
-    it('should join one equal pair', () => {
-      fourPairedValues({
-        'padding-top': '15px',
-        'padding-right': '10px',
-        'padding-bottom': '20px',
-        'padding-left': '10px'
-      }).should.eql('15px 10px 20px')
-    })
     it('should works with padding', () => {
       padding({
         'padding-top': '15px',

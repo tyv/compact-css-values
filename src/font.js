@@ -12,7 +12,6 @@ export default function font(conf) {
   } = camelCaseKeys(conf)
   if (!fontFamily) throw new Error('`font-family` property shouldn\'t be omitted')
 
-
   return {
     font: clearWhiteSpaces(
       `${fontStyle} ${fontVariant} ${fontWeight} ${fontStretch} ${fontSize}${lineHeight ? `/${lineHeight}` : ''} ${fontFamily}`

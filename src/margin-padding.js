@@ -1,20 +1,10 @@
-import {mapKeys} from 'lodash'
-import {joinDimensionPairs} from './utils'
+import {fourPairedValues} from './utils'
 
-export function fourPairedValues(conf) {
-  const {
-    top = 0,
-    right = 0,
-    bottom = 0,
-    left = 0
-  } = mapKeys(conf, (value, key) => key.split('-').pop())
-  return joinDimensionPairs([top, right, bottom, left])
-}
 
 export function margin(conf) {
-  return {margin: fourPairedValues(conf)}
+  return {margin: fourPairedValues(conf, '0')}
 }
 
 export function padding(conf) {
-  return {padding: fourPairedValues(conf)}
+  return {padding: fourPairedValues(conf, '0')}
 }
