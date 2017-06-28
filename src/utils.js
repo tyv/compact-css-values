@@ -21,7 +21,7 @@ export function joinDimensionPairs(values) {
   return [a, b, c, d].filter(value => value !== '').join(' ')
 }
 
-export function fourPairedValues(conf, defaultValue) {
+export function fourPairedValues(conf, defaultValue = '0') {
   const {
     top = defaultValue,
     right = defaultValue,
