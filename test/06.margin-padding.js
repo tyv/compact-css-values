@@ -2,8 +2,8 @@
 import {margin, padding} from '../src/margin-padding'
 
 describe('compact', () => {
-  describe('margin and padding', () => {
-    it('should works with padding', () => {
+  describe('padding', () => {
+    it('should compact and join pairs', () => {
       padding({
         'padding-top': '15px',
         'padding-right': '10px',
@@ -13,14 +13,38 @@ describe('compact', () => {
         padding: '15px 10px 20px'
       })
     })
-    it('should works with margin', () => {
+    it('should filter not relevant props', () => {
+      padding({
+        'padding-top': '1px',
+        'padding-right': '2px',
+        'padding-bottom': '3px',
+        'padding-left': '4px',
+        'dummy-top-prop': 'dummy-value'
+      }).should.eql({
+        padding: '1px 2px 3px 4px'
+      })
+    })
+  })
+  describe('margin', () => {
+    it('should compact and join pairs', () => {
       margin({
         'margin-top': '15px',
-        'margin-right': '20px',
-        'margin-bottom': '30px',
-        'margin-left': '40px'
+        'margin-right': '10px',
+        'margin-bottom': '20px',
+        'margin-left': '10px'
       }).should.eql({
-        margin: '15px 20px 30px 40px'
+        margin: '15px 10px 20px'
+      })
+    })
+    it('should filter not relevant props', () => {
+      margin({
+        'margin-top': '1px',
+        'margin-right': '2px',
+        'margin-bottom': '3px',
+        'margin-left': '4px',
+        'dummy-top-prop': 'dummy-value'
+      }).should.eql({
+        margin: '1px 2px 3px 4px'
       })
     })
   })

@@ -1,4 +1,12 @@
-import {partial} from 'lodash'
+import {pick} from 'lodash'
 import common from './common'
 
-export default partial(common, 'list-style')
+const allowedRules = [
+  'list-style-type',
+  'list-style-position',
+  'list-style-url'
+]
+
+export default function listStyle(conf) {
+  return common('list-style', pick(conf, allowedRules))
+}

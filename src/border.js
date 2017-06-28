@@ -1,4 +1,12 @@
-import {partial} from 'lodash'
+import {pick} from 'lodash'
 import common from './common'
 
-export default partial(common, 'border')
+const allowedRules = [
+  'border-width',
+  'border-style',
+  'border-color'
+]
+
+export default function border(conf) {
+  return common('border', pick(conf, allowedRules))
+}
